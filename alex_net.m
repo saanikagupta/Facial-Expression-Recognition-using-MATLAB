@@ -5,7 +5,7 @@ layers = alex.Layers
 layers(23)=fullyConnectedLayer(7);
 layers(25)=classificationLayer;
 %% Set up our training data
-allImages = imageDatastore('emotions', 'IncludeSubfolders', true, 'LabelSource', 'foldernames');
+allImages = imageDatastore('Emotions_Dataset', 'IncludeSubfolders', true, 'LabelSource', 'foldernames');
 [trainingImages, testImages] = splitEachLabel(allImages, 0.8, 'randomize');
 %% Re-train the Network
 opts = trainingOptions('sgdm', 'InitialLearnRate', 0.001, 'MaxEpochs', 20, 'MiniBatchSize', 64);
